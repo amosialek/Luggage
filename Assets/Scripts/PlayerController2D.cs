@@ -5,21 +5,14 @@ using UnityEngine;
 public class PlayerController2D : MonoBehaviour
 {
 
-    public float speed;
-    private Rigidbody2D rb;
+	public float maxSpeed = 7;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        if (moveHorizontal > 0)
-        { }
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, 0.0f);
-
-        rb.AddForce(movement * speed);
+		transform.Translate(new Vector3(Input.GetAxis("Horizontal") * maxSpeed * Time.deltaTime, 0.0f, 0.0f));
     }
 }
