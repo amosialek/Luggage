@@ -13,6 +13,7 @@ public class MenuScript : MonoBehaviour
     public GameObject canvas;
     public GameObject LevelMenu;
     public GameObject MainMenu;
+    public GameObject HelpMenu;
     public GameObject LevelButton;
     // Start is called before the first frame update
     public GameObject settingsButton;
@@ -47,21 +48,24 @@ public class MenuScript : MonoBehaviour
             lastButtonRight = secondButton.GetComponent<RectTransform>().rect.xMax;
         }
     }
-    public void ChangeScene(int sceneNumber)
+
+    public void DisableAllMenus()
     {
-        SceneManager.LoadScene(sceneNumber);
-        
-        //settingsButton.SetActive(true);
+        HelpMenu.SetActive(false);
+        MainMenu.SetActive(false);
+        LevelMenu.SetActive(false);
+    }
+
+    public void ShowHelpMenu()
+    {
+        DisableAllMenus();
+        HelpMenu.SetActive(true);
     }
 
     public void ShowLevels()
     {
-        
-        MainMenu.SetActive(false);
+        DisableAllMenus();
         LevelMenu.SetActive(true);
-
-        //button.SetActive(true);
-        //secondButton.SetActive(true);
     }
     [Serializable]
     public class Level :MonoBehaviour
@@ -83,7 +87,7 @@ public class MenuScript : MonoBehaviour
 
     public void BackButton()
     {
-        LevelMenu.SetActive(false);
+        DisableAllMenus();
         MainMenu.SetActive(true);
     }
 
