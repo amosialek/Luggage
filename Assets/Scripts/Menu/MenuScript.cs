@@ -22,27 +22,29 @@ public class MenuScript : MonoBehaviour
     void Awake()
     {
         var button = LevelButton;
-        button.GetComponent<RectTransform>().SetPositionAndRotation(new Vector3(456.5f + 37 + 40, 225.5f), new Quaternion());
         {
             var level = button.AddComponent<Level>();
             level.sceneId = 1;
             button.GetComponent<Button>().onClick.AddListener(() => level.LoadScene());
         }
-
+        float lastButtonRight = button.transform.position.x;
+        float lastButtonTop = button.transform.position.y;
         levelButtons.Add(button);
+
         for (int i = 2; i <= levelsAvailable; i++)
         {
             var secondButton = GameObject.Instantiate(levelButtons.Last(), LevelMenu.transform);
             levelButtons.Add(secondButton);
-            secondButton.GetComponent<RectTransform>().SetPositionAndRotation(new Vector3(456.5f + 37 + 40 * i, 225.5f), new Quaternion());
+            var rectT = secondButton.GetComponent<RectTransform>();
+            //secondButton.GetComponent<RectTransform>().SetPositionAndRotation(new Vector3(lastButtonRight + 5, lastButtonTop), new Quaternion());
+            secondButton.transform.position = new Vector3(lastButtonRight + 40, lastButtonTop);
+
             var level = secondButton.AddComponent<Level>();
             level.sceneId = i;
             secondButton.GetComponent<Button>().onClick.AddListener(() => level.LoadScene());
             var text = secondButton.GetComponentInChildren<Text>();
             text.text = i.ToString();
-
-
-
+            lastButtonRight = secondButton.GetComponent<RectTransform>().rect.xMax;
         }
     }
     public void ChangeScene(int sceneNumber)
