@@ -6,20 +6,19 @@ using UnityEngine.UI;
 public class LifeCounter : MonoBehaviour
 {
     public GameObject counterText;
-
-    public void Awake()
+    public static bool spawned = false;
+    private static int counter = 3;
+    public void Refresh()
     {
         counterText.GetComponent<Text>().text = "Lives: " + counter.ToString();
     }
-
-    private int counter = 3;
     public int Counter
     {
         get => counter;
         set
         {
             counter = value;
-            counterText.GetComponent<Text>().text = "Lives: " + counter.ToString();
+            Refresh();
         }
     }
 }

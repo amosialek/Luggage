@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AxeMan : MonoBehaviour
+public interface IEnemy { }
+public class AxeMan : MonoBehaviour, IEnemy
 {
     public GameObject player;
     private Rigidbody2D axeManRigidBody;

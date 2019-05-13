@@ -7,19 +7,19 @@ public class ScoreCounter : MonoBehaviour
 {
     public GameObject counterText;
 
-    public void Awake()
+    private static int counter = 3;
+    public void Refresh()
     {
         counterText.GetComponent<Text>().text = "Score: " + counter.ToString();
     }
 
-    private int counter = 3;
     public int Counter
     {
         get => counter;
         set
         {
             counter = value;
-            counterText.GetComponent<Text>().text = "Score: " + counter.ToString();
+            Refresh();
         }
     }
 }
