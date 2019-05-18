@@ -9,7 +9,7 @@ public class AxeMan : MonoBehaviour, IEnemy
     public GameObject player;
     private Rigidbody2D axeManRigidBody;
     private float visibilityRange=10e3f;
-    public float Force;
+    public float Force = 0.02f;
     // Start is called before the first frame update
     void Start()
     {

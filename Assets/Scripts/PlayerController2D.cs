@@ -17,12 +17,10 @@ public class PlayerController2D : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-
         switch (col.gameObject.tag)
         {
             case "Enemy": gameManager.Die(); break;
-            case "Item": gameManager.Score(); break;
-            }
-        Debug.Log("OnCollisionEnter2D");
+            case "Item": gameManager.Score(); col.gameObject.SetActive(false); break;
+        }
     }
 }
