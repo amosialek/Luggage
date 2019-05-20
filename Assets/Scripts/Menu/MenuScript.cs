@@ -17,7 +17,8 @@ public class MenuScript : MonoBehaviour
     public GameObject LevelButton;
     // Start is called before the first frame update
     public GameObject settingsButton;
-    public int levelsAvailable;
+    private int levelsAvailable;
+    public int levelsCount;
     public List<GameObject> levelButtons;
 
     void Awake()
@@ -31,8 +32,9 @@ public class MenuScript : MonoBehaviour
         float lastButtonRight = button.transform.position.x;
         float lastButtonTop = button.transform.position.y;
         levelButtons.Add(button);
+        levelsAvailable = PlayerPrefs.GetInt("PassedLevels") + 1;
 
-        for (int i = 2; i <= levelsAvailable; i++)
+        for (int i = 2; i <= levelsCount; i++)
         {
             var secondButton = GameObject.Instantiate(levelButtons.Last(), LevelMenu.transform);
             levelButtons.Add(secondButton);
@@ -45,7 +47,11 @@ public class MenuScript : MonoBehaviour
             secondButton.GetComponent<Button>().onClick.AddListener(() => level.LoadScene());
             var text = secondButton.GetComponentInChildren<Text>();
             text.text = i.ToString();
-            lastButtonRight = secondButton.GetComponent<RectTransform>().rect.xMax;
+            lastButtonRight = secondButton.transform.position.x;
+            if (i > levelsAvailable)
+            {
+                secondButton.SetActive(false);
+            }
         }
     }
 
@@ -65,6 +71,11 @@ public class MenuScript : MonoBehaviour
     public void ShowLevels()
     {
         DisableAllMenus();
+        levelsAvailable = Math.Min(levelsCount,PlayerPrefs.GetInt("PassedLevels")+1);
+        for(int i=0;i<levelsAvailable;i++)
+        {
+            levelButtons[i].SetActive(true);
+        }
         LevelMenu.SetActive(true);
     }
     [Serializable]

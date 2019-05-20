@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,5 +22,15 @@ public class ScoreCounter : MonoBehaviour
             counter = value;
             Refresh();
         }
+    }
+
+    internal void ChangeColor(Color color)
+    {
+        counterText.GetComponent<Text>().color = color;
+    }
+
+    public void Reset()
+    {
+        this.Counter = 0;
     }
 }
