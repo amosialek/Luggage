@@ -34,7 +34,9 @@ public class GameManager : MonoBehaviour
 
 	public void WinLevel()
 	{
-		winText.SetActive(true);
+        PlayerPrefs.SetInt("PassedLevels",Math.Max(PlayerPrefs.GetInt("PassedLevels"), SceneManager.GetActiveScene().buildIndex));
+        PlayerPrefs.Save();
+        winText.SetActive(true);
 	}
 
     public void GameOver()
@@ -46,6 +48,8 @@ public class GameManager : MonoBehaviour
     internal void Score()
     {
         scoreCounter.Counter++;
+        if (GameObject.FindGameObjectsWithTag("Item").Length <= scoreCounter.Counter)
+            scoreCounter.ChangeColor(Color.green);
     }
 
     public void Die()

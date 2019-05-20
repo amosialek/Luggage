@@ -1144,7 +1144,7 @@ MonoBehaviour:
   HelpMenu: {fileID: 626959060}
   LevelButton: {fileID: 178273342}
   settingsButton: {fileID: 308954548}
-  levelsAvailable: 2
+  levelsCount: 3
   levelButtons: []
 --- !u!4 &1060450231
 Transform:
