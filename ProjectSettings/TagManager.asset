@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Item
   - PatrolFlag
+  - EndLevel
   layers:
   - Default
   - TransparentFX
