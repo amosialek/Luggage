@@ -16,7 +16,7 @@ public class PortalNotEndScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (tag == string.Empty || col.CompareTag(tag))
+        if (tag == string.Empty || col.gameObject.tag==tag)
         {
             col.transform.position = teleportTo.position;
         }
