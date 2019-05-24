@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -51,7 +52,9 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("PassedLevels",Math.Max(PlayerPrefs.GetInt("PassedLevels"), SceneManager.GetActiveScene().buildIndex));
         PlayerPrefs.Save();
         winText.SetActive(true);
-        GameObject.Find("Stars").GetComponent<SpriteRenderer>().sprite = achievementsManager.GetStarsToBeShown();
+        var img = GameObject.Find("Stars").GetComponent<Image>();
+        img.overrideSprite = achievementsManager.GetStarsToBeShown();
+        img.enabled = true;
 
     }
 

@@ -516,6 +516,11 @@ PrefabInstance:
       propertyPath: ItemsToCollect
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7255403652669769806, guid: c0389314346bb6d41b9ed60cdd5f698f,
+        type: 3}
+      propertyPath: EnemiesToEat
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0389314346bb6d41b9ed60cdd5f698f, type: 3}
 --- !u!1 &1319100252
@@ -1869,6 +1874,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4158325135966158128, guid: b665f5e3fcb2cf9438a0fe212d797272,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b665f5e3fcb2cf9438a0fe212d797272, type: 3}
