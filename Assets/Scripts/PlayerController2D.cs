@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerController2D : MonoBehaviour
@@ -26,13 +27,21 @@ public class PlayerController2D : MonoBehaviour
             {
                 case "Enemy": col.gameObject.SetActive(false); break;
                 case "Item": gameManager.Score(100); col.gameObject.SetActive(false); break;
+                case "EndLevel": gameManager.WinLevel(); StartCoroutine(WaitAndGoToMenu()); break;
             }
         } else
         {
             switch (col.gameObject.tag)
             {
                 case "Enemy": gameManager.Die(); break;
+                case "EndLevel": gameManager.WinLevel(); StartCoroutine(WaitAndGoToMenu()); break;
             }
         }
+    }
+	
+	IEnumerator WaitAndGoToMenu()
+    {
+        yield return new WaitForSeconds(3);
+		SceneManager.LoadScene(0);
     }
 }
