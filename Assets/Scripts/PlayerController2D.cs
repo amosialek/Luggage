@@ -17,10 +17,21 @@ public class PlayerController2D : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D col)
     {
-        switch (col.gameObject.tag)
+        float collsion = Vector2.Dot(transform.position - col.transform.position, Physics2D.gravity);
+
+        if (collsion > 4)
         {
-            case "Enemy": gameManager.Die(); break;
-            case "Item": gameManager.Score(); col.gameObject.SetActive(false); break;
+            switch (col.gameObject.tag)
+            {
+                case "Enemy": col.gameObject.SetActive(false); break;
+                case "Item": gameManager.Score(); col.gameObject.SetActive(false); break;
+            }
+        } else
+        {
+            switch (col.gameObject.tag)
+            {
+                case "Enemy": gameManager.Die(); break;
+            }
         }
     }
 }
