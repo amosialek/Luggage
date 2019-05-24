@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,11 +12,13 @@ public class GameManager : MonoBehaviour
 	public GameObject gameOverText;
     private LifeCounter lifeCounter;
     private ScoreCounter scoreCounter;
+    private AchievementsManager achievementsManager;
 
-	void Awake()
+    void Awake()
 	{
         lifeCounter = this.GetComponent<LifeCounter>();
         scoreCounter = this.GetComponent<ScoreCounter>();
+        achievementsManager = this.GetComponent<AchievementsManager>();
         lifeCounter.Refresh();
         scoreCounter.Refresh();
 		if (instance == null)
@@ -45,16 +48,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    internal void Score()
+    internal void Score(int score)
     {
-        scoreCounter.Counter++;
-        if (GameObject.FindGameObjectsWithTag("Item").Length <= scoreCounter.Counter)
-            scoreCounter.ChangeColor(Color.green);
+        scoreCounter.Counter+=score;
     }
 
     public void Die()
     {
         lifeCounter.Counter = lifeCounter.Counter - 1;
+        achievementsManager.Die();
         if (lifeCounter.Counter > 0)
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         else

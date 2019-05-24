@@ -8,7 +8,7 @@ public class ScoreCounter : MonoBehaviour
 {
     public GameObject counterText;
 
-    private static int counter = 0;
+    private int counter = 0;
     public void Refresh()
     {
         counterText.GetComponent<Text>().text = "Score: " + counter.ToString();

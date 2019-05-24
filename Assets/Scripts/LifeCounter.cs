@@ -6,8 +6,7 @@ using UnityEngine.UI;
 public class LifeCounter : MonoBehaviour
 {
     public GameObject counterText;
-    public static bool spawned = false;
-    private static int counter = 3;
+    private int counter = 3;
     public void Refresh()
     {
         counterText.GetComponent<Text>().text = "Lives: " + counter.ToString();
