@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndLevelScript : MonoBehaviour
+public class PortalNotEndScript : MonoBehaviour
 {
-    public Transform teleportTo;
+    [SerializeField] public Transform teleportTo;
     private Rigidbody2D portalRigidBody;
     [SerializeField] string tag = "Player";
 
