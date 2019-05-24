@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2275122554285358246}
   - component: {fileID: 8367024657208796145}
   - component: {fileID: 8490731959715294620}
+  - component: {fileID: 7255403652669769806}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -73,3 +74,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counterText: {fileID: 0}
+--- !u!114 &7255403652669769806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2275122554285358241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e965e4af04a2449a3dff39acb0be42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemsToCollect: 0
+  EnemiesToEat: 0
+  gameManager: {fileID: 0}
+  stars0: {fileID: 21300000, guid: 92c2646e6cf3cd647ae0473cb5dfa173, type: 3}
+  stars1: {fileID: 21300000, guid: 74054d296261d4748abc7c8f7a00d8a2, type: 3}
+  stars2: {fileID: 21300000, guid: e8a698821d3f9ad469e61c68fee98e84, type: 3}
+  stars3: {fileID: 21300000, guid: 88a03686c7a8b5746acf1c5b41cceb92, type: 3}

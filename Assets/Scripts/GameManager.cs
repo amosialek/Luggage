@@ -30,17 +30,30 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public static GameManager GetInstance()
+    internal void EatEnemy()
+    {
+        achievementsManager.EatEnemy();
+    }
+
+    public static GameManager GetInstance()
 	{
 		return instance;
 	}
 
-	public void WinLevel()
+    internal void EatItem()
+    {
+        achievementsManager.CollectItem();
+        Score(100);
+    }
+
+    public void WinLevel()
 	{
         PlayerPrefs.SetInt("PassedLevels",Math.Max(PlayerPrefs.GetInt("PassedLevels"), SceneManager.GetActiveScene().buildIndex));
         PlayerPrefs.Save();
         winText.SetActive(true);
-	}
+        GameObject.Find("Stars").GetComponent<SpriteRenderer>().sprite = achievementsManager.GetStarsToBeShown();
+
+    }
 
     public void GameOver()
     {
@@ -57,9 +70,7 @@ public class GameManager : MonoBehaviour
     {
         lifeCounter.Counter = lifeCounter.Counter - 1;
         achievementsManager.Die();
-        if (lifeCounter.Counter > 0)
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        else
+        if (lifeCounter.Counter <= 0)
             GameOver();
     }
 }

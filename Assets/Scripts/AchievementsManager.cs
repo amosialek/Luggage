@@ -15,7 +15,10 @@ namespace Assets.Scripts
         public int ItemsToCollect;
         public int EnemiesToEat;
         public GameManager gameManager;
-        
+        public Sprite stars0;
+        public Sprite stars1;
+        public Sprite stars2;
+        public Sprite stars3;
 
         private int GetStars()
         {
@@ -24,9 +27,22 @@ namespace Assets.Scripts
                 stars++;
             if (enemiesEaten >= EnemiesToEat)
                 stars++;
-            if (deaths > 0)
+            if (deaths == 0)
                 stars++;
             return stars;
+        }
+
+        public Sprite GetStarsToBeShown()
+        {
+            int stars = GetStars();
+            switch (stars)
+            {
+                case 0: return stars0;
+                case 1: return stars1;
+                case 2: return stars2;
+                case 3: return stars3;
+            }
+            return null;
         }
 
         public void CollectItem()
