@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndLevelScript : MonoBehaviour
+public class PortalNotEndScript : MonoBehaviour
 {
-    public Transform teleportTo;
+    [SerializeField] public Transform teleportTo;
     private Rigidbody2D portalRigidBody;
     [SerializeField] string tag = "Player";
 
@@ -16,7 +16,7 @@ public class EndLevelScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (tag == string.Empty || col.CompareTag(tag))
+        if (tag == string.Empty || col.gameObject.tag==tag)
         {
             col.transform.position = teleportTo.position;
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndLevelScript : MonoBehaviour
+public class PortalScript : MonoBehaviour
 {
     public Transform teleportTo;
     private Rigidbody2D portalRigidBody;
