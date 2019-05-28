@@ -30,4 +30,12 @@ public class AxeMan : MonoBehaviour, IEnemy
             axeManRigidBody.AddForce(force);
         }
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        switch (col.gameObject.tag)
+        {
+            case "Item": col.gameObject.SetActive(false); break;
+        }
+    }
 }

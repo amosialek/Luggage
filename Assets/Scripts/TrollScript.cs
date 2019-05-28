@@ -35,4 +35,12 @@ public class TrollScript : MonoBehaviour
 			currentSpeed = maxSpeed;
 		}
 	}
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        switch (col.gameObject.tag)
+        {
+             case "Item": col.gameObject.SetActive(false); break;
+        }
+    }
 }
+
