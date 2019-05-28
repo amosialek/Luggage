@@ -21,7 +21,7 @@ public class AxeMan : MonoBehaviour, IEnemy
     {
         float xDistance = gameObject.transform.position.x - player.transform.position.x;
         float yDistance = gameObject.transform.position.y - player.transform.position.y;
-        //if (xDistance * xDistance + yDistance * yDistance < visibilityRange * visibilityRange)
+        if (xDistance * xDistance + yDistance * yDistance < visibilityRange * visibilityRange)
         {
             var gravity = Physics2D.gravity;
             var force = (Math.Abs(gravity.x) > Math.Abs(gravity.y))
