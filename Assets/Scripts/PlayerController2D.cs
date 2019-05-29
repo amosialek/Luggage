@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController2D : MonoBehaviour
 {
     public GameManager gameManager;
 	public float maxSpeed = 7;
     private Vector3 checkpointPosition;
-
+    public Sprite openSprite;
+    public Sprite closedSprite;
+    private int currentSprite=0;
     void Awake()
     {
         this.checkpointPosition = this.transform.position;
@@ -18,7 +21,22 @@ public class PlayerController2D : MonoBehaviour
     {
 		transform.Translate(new Vector3(Input.GetAxis("Horizontal") * maxSpeed * Time.deltaTime, 0.0f, 0.0f));
         if (Input.GetKey("space"))
+        {
             gameManager.Score(-1);
+            if (currentSprite == 0)
+            {
+                this.GetComponent<SpriteRenderer>().sprite= openSprite;
+                currentSprite = 1;
+            }
+        }
+        else
+        {
+            if (currentSprite == 1)
+            {
+                this.GetComponent<SpriteRenderer>().sprite = closedSprite;
+                currentSprite = 0;
+            }
+        }
     }
     void OnCollisionEnter2D(Collision2D col)
     {

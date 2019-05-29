@@ -118,6 +118,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   maxSpeed: 7
+  openSprite: {fileID: 21300000, guid: 70470c4f1cf44ce419afb83bfb793afc, type: 3}
+  closedSprite: {fileID: 21300000, guid: 32c145cbc2f06af4590cac12228fc80f, type: 3}
 --- !u!114 &745443423989439832
 MonoBehaviour:
   m_ObjectHideFlags: 0
