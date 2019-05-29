@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Albert.unity
     guid: 003bb13bf8f998046a00b47e20fec13b
+  - enabled: 1
+    path: Assets/Scenes/Mysz.unity
+    guid: ab8e927b57da4064dbac383f163f84ed
   m_configObjects: {}
