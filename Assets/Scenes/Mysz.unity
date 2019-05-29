@@ -9725,17 +9725,17 @@ PrefabInstance:
     - target: {fileID: 7006342147349522622, guid: 1dddc91be61664748884603b31a0d007,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 15.1
       objectReference: {fileID: 0}
     - target: {fileID: 7006342147349522622, guid: 1dddc91be61664748884603b31a0d007,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 11.4
       objectReference: {fileID: 0}
     - target: {fileID: 7006342147349522622, guid: 1dddc91be61664748884603b31a0d007,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 7006342147349522622, guid: 1dddc91be61664748884603b31a0d007,
         type: 3}
