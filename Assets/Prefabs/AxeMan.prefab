@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  Force: 20
+  Force: 10
 --- !u!50 &3599969580350517831
 Rigidbody2D:
   serializedVersion: 4
