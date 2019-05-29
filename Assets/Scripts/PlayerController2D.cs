@@ -41,6 +41,28 @@ public class PlayerController2D : MonoBehaviour
             }
         }
     }
+	
+	void OnCollisionStay2D(Collision2D col)
+    {
+        float collsion = Vector2.Dot(transform.position - col.transform.position, Physics2D.gravity);
+
+        if (collsion > 4 && Input.GetKey("space"))
+        {
+            switch (col.gameObject.tag)
+            {
+                case "Enemy": gameManager.EatEnemy(); col.gameObject.SetActive(false); break;
+                case "Item": gameManager.EatItem(); col.gameObject.SetActive(false); break;
+                case "EndLevel": gameManager.WinLevel(); StartCoroutine(WaitAndGoToMenu()); break;
+            }
+        } else
+        {
+            switch (col.gameObject.tag)
+            {
+                case "Enemy": this.transform.position = checkpointPosition; gameManager.Die(); break;
+                case "EndLevel": gameManager.WinLevel(); StartCoroutine(WaitAndGoToMenu()); break;
+            }
+        }
+    }
 
     public void SetCheckpointPosition(Vector3 position)
     {
