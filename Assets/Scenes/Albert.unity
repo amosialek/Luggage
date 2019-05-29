@@ -212,12 +212,12 @@ PrefabInstance:
     - target: {fileID: 4812082819327292157, guid: df63b6f4479656b40906d5e14b992159,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.5
+      value: 3.57
       objectReference: {fileID: 0}
     - target: {fileID: 4812082819327292157, guid: df63b6f4479656b40906d5e14b992159,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.45
+      value: -3.64
       objectReference: {fileID: 0}
     - target: {fileID: 4812082819327292157, guid: df63b6f4479656b40906d5e14b992159,
         type: 3}
@@ -6045,33 +6045,6 @@ Tilemap:
       m_ObjectToInstantiate: {fileID: 0}
       m_TileFlags: 1
       m_ColliderType: 1
-  - first: {x: 1, y: -4, z: 0}
-    second:
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: 2, y: -4, z: 0}
-    second:
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
-  - first: {x: 3, y: -4, z: 0}
-    second:
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_ObjectToInstantiate: {fileID: 0}
-      m_TileFlags: 1
-      m_ColliderType: 1
   - first: {x: 5, y: -4, z: 0}
     second:
       m_TileIndex: 0
@@ -7388,13 +7361,13 @@ Tilemap:
       m_ColliderType: 1
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 292
+  - m_RefCount: 289
     m_Data: {fileID: 11400000, guid: 5ba23579fb1dca24a833426c30e2b058, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 292
+  - m_RefCount: 289
     m_Data: {fileID: 21300000, guid: e2ce2f6706bafca4e955844780420839, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 292
+  - m_RefCount: 289
     m_Data:
       e00: 1
       e01: 0
@@ -7413,7 +7386,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 292
+  - m_RefCount: 289
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
