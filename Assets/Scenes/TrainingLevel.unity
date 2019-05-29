@@ -14595,6 +14595,11 @@ PrefabInstance:
       propertyPath: counterText
       value: 
       objectReference: {fileID: 1393064797}
+    - target: {fileID: 7255403652669769806, guid: c0389314346bb6d41b9ed60cdd5f698f,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 611446938}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0389314346bb6d41b9ed60cdd5f698f, type: 3}
 --- !u!1 &1922363960 stripped
